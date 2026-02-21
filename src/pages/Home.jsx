@@ -123,10 +123,11 @@ const Home = () => {
       <div className="bg-[#151A21] border border-[#2B3139] rounded-2xl p-6">
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-lg font-semibold">Price Chart</h3>
+          {/* Timeframe buttons - with click handler */}
           <div className="flex gap-2">
-            {['1H', '24H', '7D', '30D'].map((tf) => (
+          {['1H', '24H', '7D', '30D'].map((tf) => (
+            <div key={tf} className="relative group">
               <button 
-                key={tf}
                 className={`px-3 py-1 rounded-lg text-sm font-medium transition-all ${
                   tf === '24H' 
                     ? 'bg-[#00D4AA] text-[#0B0E11]' 
@@ -135,8 +136,13 @@ const Home = () => {
               >
                 {tf}
               </button>
-            ))}
-          </div>
+              {/* Tooltip on hover */}
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-[#151A21] text-[#848E9C] text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                Coming Soon
+              </span>
+            </div>
+          ))}
+        </div>
         </div>
         <MarketChart />
       </div>
