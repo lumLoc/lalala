@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import { CryptoProvider } from './context/CryptoContext';
-import { TrendingUp, BarChart3, Bell, Settings, Search, Menu } from 'lucide-react';
+import { TrendingUp, BarChart3, Bell, Settings as SettingsIcon, Search, Menu } from 'lucide-react';
 import { useState } from 'react';
 import Home from './pages/Home';
 import Analysis from './pages/Analysis';
@@ -78,7 +78,7 @@ function App() {
                   }
                 `}
               >
-                <Settings className="w-5 h-5" />
+                <SettingsIcon className="w-5 h-5" />
                 <span className="font-medium">Settings</span>
               </NavLink>
             </nav>
@@ -139,7 +139,7 @@ function App() {
                     }
                   `}
                 >
-                  <Settings className="w-5 h-5" />
+                  <SettingsIcon className="w-5 h-5" />
                 </NavLink>
                 
                 <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#00D4AA] to-[#00B4D8] flex items-center justify-center text-sm font-bold ml-2">
